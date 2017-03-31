@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -10,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="SampleContainerSequencedView" id="1Xt-HY-uBw">
+                            <menuItem title="SampleContainerViewUse" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="SampleContainerSequencedView" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="SampleContainerViewUse" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About SampleContainerSequencedView" id="5kV-Vb-QxS">
+                                        <menuItem title="About SampleContainerViewUse" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -28,7 +30,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide SampleContainerSequencedView" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide SampleContainerViewUse" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -46,7 +48,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit SampleContainerSequencedView" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit SampleContainerViewUse" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -639,7 +641,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="SampleContainerSequencedView Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="SampleContainerViewUse Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -653,7 +655,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -679,15 +681,213 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="SampleContainerSequencedView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="WZf-XU-xoK">
+                                <rect key="frame" x="235" y="60" width="225" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="FS4-Q3-65F"/>
+                                    <constraint firstAttribute="width" constant="225" id="GhB-vg-VyN"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="4cw-Bl-45b" kind="embed" id="HVA-ps-kBc"/>
+                                </connections>
+                            </containerView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qO7-Db-ktd">
+                                <rect key="frame" x="35" y="198" width="164" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Custom Push of 2nd" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dS5-S0-YjP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="pushViewController:" target="XfG-lQ-9wD" id="NAk-cE-tHf"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A6d-it-eml">
+                                <rect key="frame" x="84" y="165" width="64" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Pop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="102-MT-uwR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="popViewController:" target="XfG-lQ-9wD" id="1Xg-xS-Nvo"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UOP-RG-l6Y">
+                                <rect key="frame" x="61" y="132" width="111" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Pop to Root" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ijk-mA-dhW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="popToRootViewController:" target="XfG-lQ-9wD" id="uqE-uJ-jbY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="WZf-XU-xoK" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="60" id="0Ca-5J-eho"/>
+                            <constraint firstAttribute="trailing" secondItem="WZf-XU-xoK" secondAttribute="trailing" constant="20" id="6T4-Vi-w1O"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Content Manager View Controller-->
+        <scene sceneID="hFv-Ue-AHZ">
+            <objects>
+                <viewController id="4cw-Bl-45b" customClass="ContentManagerViewController" customModule="SampleContainerSequencedView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="C41-Ej-zCs">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="iRz-7h-PNk">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <connections>
+                                    <segue destination="E8q-qE-0Ks" kind="embed" id="nzN-Qy-qaW"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="iRz-7h-PNk" firstAttribute="top" secondItem="C41-Ej-zCs" secondAttribute="top" id="HmE-3U-Ndf"/>
+                            <constraint firstItem="iRz-7h-PNk" firstAttribute="leading" secondItem="C41-Ej-zCs" secondAttribute="leading" id="isJ-fm-yqr"/>
+                            <constraint firstAttribute="trailing" secondItem="iRz-7h-PNk" secondAttribute="trailing" id="l0J-KR-x7V"/>
+                            <constraint firstAttribute="bottom" secondItem="iRz-7h-PNk" secondAttribute="bottom" id="omO-rW-2vJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="subViewControllerManager" destination="iRz-7h-PNk" id="n5D-cU-ecf"/>
+                    </connections>
+                </viewController>
+                <customObject id="fab-Xs-NCj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="617" y="370"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="12b-ir-9lQ">
+            <objects>
+                <viewController id="E8q-qE-0Ks" sceneMemberID="viewController">
+                    <view key="view" id="xu0-sO-QLn">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGP-gM-s1u">
+                                <rect key="frame" x="18" y="263" width="114" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1st view controller" id="qmm-VY-dwY">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hc-l1-EYO">
+                                <rect key="frame" x="14" y="227" width="71" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Push" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DrO-tr-2mJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="JFw-AC-AM6" kind="custom" customClass="SegueBetweenEmbedded" customModule="SampleContainerSequencedView" customModuleProvider="target" id="Duh-to-sOM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="qfz-r3-DoC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="661" y="807"/>
+        </scene>
+        <!--Back Forward View Controller-->
+        <scene sceneID="Prm-Zi-FCH">
+            <objects>
+                <viewController storyboardIdentifier="BackForwardStoryboardID" id="JFw-AC-AM6" customClass="BackForwardViewController" customModule="SampleContainerSequencedView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="WxZ-nO-yuR">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdZ-mn-KVc">
+                                <rect key="frame" x="18" y="263" width="120" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="2nd view controller" id="t3i-hG-U9n">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button identifier="test" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWl-zM-n7u">
+                                <rect key="frame" x="13" y="227" width="64" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="pop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="scs-It-xAk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="JFw-AC-AM6" id="2ms-zr-f0w"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zh9-wk-J73">
+                                <rect key="frame" x="9" y="194" width="71" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Push" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fe3-9x-ilV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="YTP-aU-I5Q" kind="custom" customClass="SegueBetweenEmbedded" customModule="SampleContainerSequencedView" customModuleProvider="target" id="ZaJ-QT-lwm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="FdZ-mn-KVc" firstAttribute="leading" secondItem="WxZ-nO-yuR" secondAttribute="leading" constant="20" id="CVf-p3-IhO"/>
+                            <constraint firstItem="FdZ-mn-KVc" firstAttribute="top" secondItem="WxZ-nO-yuR" secondAttribute="top" constant="20" id="qiO-NW-5A3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="r30-qR-rCn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655" y="1262"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JWw-Ha-3w5">
+            <objects>
+                <viewController id="YTP-aU-I5Q" sceneMemberID="viewController">
+                    <view key="view" id="7UX-O6-ABH">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcd-71-CUM">
+                                <rect key="frame" x="29" y="251" width="106" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A third controller" id="zCd-Rz-MWa">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTp-g1-0Br">
+                                <rect key="frame" x="34" y="215" width="64" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Pop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vRy-ea-CA7">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="YTP-aU-I5Q" id="CoL-YE-bIH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="3Wy-Y2-9B0" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1177" y="1071"/>
         </scene>
     </scenes>
 </document>

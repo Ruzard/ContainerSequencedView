@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  SampleContainerSequencedView
 //
-//  Created by Konstantin Malyshev on 3/31/17.
-//
 //
 
 import Cocoa
